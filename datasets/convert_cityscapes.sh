@@ -43,9 +43,9 @@ WORK_DIR="."
 CITYSCAPES_ROOT="${WORK_DIR}/cityscapes"
 
 # Create training labels.
-python "${CITYSCAPES_ROOT}/cityscapesscripts/preparation/createTrainIdLabelImgs.py"
+python3 "${CITYSCAPES_ROOT}/cityscapesScripts/cityscapesscripts/preparation/createTrainIdLabelImgs.py"
 
-# Build TFRecords of the dataset.
+# Build TFRecords of the dataset.sh 
 # First, create output directory for storing TFRecords.
 OUTPUT_DIR="${CITYSCAPES_ROOT}/tfrecord"
 mkdir -p "${OUTPUT_DIR}"
@@ -53,6 +53,6 @@ mkdir -p "${OUTPUT_DIR}"
 BUILD_SCRIPT="${CURRENT_DIR}/build_cityscapes_data.py"
 
 echo "Converting Cityscapes dataset..."
-python "${BUILD_SCRIPT}" \
+python3 "${BUILD_SCRIPT}" \
   --cityscapes_root="${CITYSCAPES_ROOT}" \
   --output_dir="${OUTPUT_DIR}" \
